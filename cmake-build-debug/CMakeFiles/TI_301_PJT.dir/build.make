@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6
+CMAKE_SOURCE_DIR = C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TI_301_PJT.dir/depend.make
@@ -69,74 +69,74 @@ include CMakeFiles/TI_301_PJT.dir/progress.make
 include CMakeFiles/TI_301_PJT.dir/flags.make
 
 CMakeFiles/TI_301_PJT.dir/main.c.obj: CMakeFiles/TI_301_PJT.dir/flags.make
-CMakeFiles/TI_301_PJT.dir/main.c.obj: C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/main.c
+CMakeFiles/TI_301_PJT.dir/main.c.obj: C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/main.c
 CMakeFiles/TI_301_PJT.dir/main.c.obj: CMakeFiles/TI_301_PJT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/TI_301_PJT.dir/main.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/main.c.obj -MF CMakeFiles\TI_301_PJT.dir\main.c.obj.d -o CMakeFiles\TI_301_PJT.dir\main.c.obj -c C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/TI_301_PJT.dir/main.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/main.c.obj -MF CMakeFiles\TI_301_PJT.dir\main.c.obj.d -o CMakeFiles\TI_301_PJT.dir\main.c.obj -c C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\main.c
 
 CMakeFiles/TI_301_PJT.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/TI_301_PJT.dir/main.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\main.c > CMakeFiles\TI_301_PJT.dir\main.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\main.c > CMakeFiles\TI_301_PJT.dir\main.c.i
 
 CMakeFiles/TI_301_PJT.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/TI_301_PJT.dir/main.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\main.c -o CMakeFiles\TI_301_PJT.dir\main.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\main.c -o CMakeFiles\TI_301_PJT.dir\main.c.s
 
 CMakeFiles/TI_301_PJT.dir/utils.c.obj: CMakeFiles/TI_301_PJT.dir/flags.make
-CMakeFiles/TI_301_PJT.dir/utils.c.obj: C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/utils.c
+CMakeFiles/TI_301_PJT.dir/utils.c.obj: C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/utils.c
 CMakeFiles/TI_301_PJT.dir/utils.c.obj: CMakeFiles/TI_301_PJT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/TI_301_PJT.dir/utils.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/utils.c.obj -MF CMakeFiles\TI_301_PJT.dir\utils.c.obj.d -o CMakeFiles\TI_301_PJT.dir\utils.c.obj -c C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/TI_301_PJT.dir/utils.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/utils.c.obj -MF CMakeFiles\TI_301_PJT.dir\utils.c.obj.d -o CMakeFiles\TI_301_PJT.dir\utils.c.obj -c C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\utils.c
 
 CMakeFiles/TI_301_PJT.dir/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/TI_301_PJT.dir/utils.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\utils.c > CMakeFiles\TI_301_PJT.dir\utils.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\utils.c > CMakeFiles\TI_301_PJT.dir\utils.c.i
 
 CMakeFiles/TI_301_PJT.dir/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/TI_301_PJT.dir/utils.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\utils.c -o CMakeFiles\TI_301_PJT.dir\utils.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\utils.c -o CMakeFiles\TI_301_PJT.dir\utils.c.s
 
 CMakeFiles/TI_301_PJT.dir/hasse.c.obj: CMakeFiles/TI_301_PJT.dir/flags.make
-CMakeFiles/TI_301_PJT.dir/hasse.c.obj: C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/hasse.c
+CMakeFiles/TI_301_PJT.dir/hasse.c.obj: C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/hasse.c
 CMakeFiles/TI_301_PJT.dir/hasse.c.obj: CMakeFiles/TI_301_PJT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/TI_301_PJT.dir/hasse.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/hasse.c.obj -MF CMakeFiles\TI_301_PJT.dir\hasse.c.obj.d -o CMakeFiles\TI_301_PJT.dir\hasse.c.obj -c C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\hasse.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/TI_301_PJT.dir/hasse.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/hasse.c.obj -MF CMakeFiles\TI_301_PJT.dir\hasse.c.obj.d -o CMakeFiles\TI_301_PJT.dir\hasse.c.obj -c C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\hasse.c
 
 CMakeFiles/TI_301_PJT.dir/hasse.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/TI_301_PJT.dir/hasse.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\hasse.c > CMakeFiles\TI_301_PJT.dir\hasse.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\hasse.c > CMakeFiles\TI_301_PJT.dir\hasse.c.i
 
 CMakeFiles/TI_301_PJT.dir/hasse.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/TI_301_PJT.dir/hasse.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\hasse.c -o CMakeFiles\TI_301_PJT.dir\hasse.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\hasse.c -o CMakeFiles\TI_301_PJT.dir\hasse.c.s
 
 CMakeFiles/TI_301_PJT.dir/vertex.c.obj: CMakeFiles/TI_301_PJT.dir/flags.make
-CMakeFiles/TI_301_PJT.dir/vertex.c.obj: C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/vertex.c
+CMakeFiles/TI_301_PJT.dir/vertex.c.obj: C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/vertex.c
 CMakeFiles/TI_301_PJT.dir/vertex.c.obj: CMakeFiles/TI_301_PJT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/TI_301_PJT.dir/vertex.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/vertex.c.obj -MF CMakeFiles\TI_301_PJT.dir\vertex.c.obj.d -o CMakeFiles\TI_301_PJT.dir\vertex.c.obj -c C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\vertex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/TI_301_PJT.dir/vertex.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/vertex.c.obj -MF CMakeFiles\TI_301_PJT.dir\vertex.c.obj.d -o CMakeFiles\TI_301_PJT.dir\vertex.c.obj -c C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\vertex.c
 
 CMakeFiles/TI_301_PJT.dir/vertex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/TI_301_PJT.dir/vertex.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\vertex.c > CMakeFiles\TI_301_PJT.dir\vertex.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\vertex.c > CMakeFiles\TI_301_PJT.dir\vertex.c.i
 
 CMakeFiles/TI_301_PJT.dir/vertex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/TI_301_PJT.dir/vertex.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\vertex.c -o CMakeFiles\TI_301_PJT.dir\vertex.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\vertex.c -o CMakeFiles\TI_301_PJT.dir\vertex.c.s
 
 CMakeFiles/TI_301_PJT.dir/matrix.c.obj: CMakeFiles/TI_301_PJT.dir/flags.make
-CMakeFiles/TI_301_PJT.dir/matrix.c.obj: C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/matrix.c
+CMakeFiles/TI_301_PJT.dir/matrix.c.obj: C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/matrix.c
 CMakeFiles/TI_301_PJT.dir/matrix.c.obj: CMakeFiles/TI_301_PJT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/TI_301_PJT.dir/matrix.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/matrix.c.obj -MF CMakeFiles\TI_301_PJT.dir\matrix.c.obj.d -o CMakeFiles\TI_301_PJT.dir\matrix.c.obj -c C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\matrix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/TI_301_PJT.dir/matrix.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TI_301_PJT.dir/matrix.c.obj -MF CMakeFiles\TI_301_PJT.dir\matrix.c.obj.d -o CMakeFiles\TI_301_PJT.dir\matrix.c.obj -c C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\matrix.c
 
 CMakeFiles/TI_301_PJT.dir/matrix.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/TI_301_PJT.dir/matrix.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\matrix.c > CMakeFiles\TI_301_PJT.dir\matrix.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\matrix.c > CMakeFiles\TI_301_PJT.dir\matrix.c.i
 
 CMakeFiles/TI_301_PJT.dir/matrix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/TI_301_PJT.dir/matrix.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\matrix.c -o CMakeFiles\TI_301_PJT.dir\matrix.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\matrix.c -o CMakeFiles\TI_301_PJT.dir\matrix.c.s
 
 # Object files for target TI_301_PJT
 TI_301_PJT_OBJECTS = \
@@ -158,7 +158,7 @@ TI_301_PJT.exe: CMakeFiles/TI_301_PJT.dir/build.make
 TI_301_PJT.exe: CMakeFiles/TI_301_PJT.dir/linkLibs.rsp
 TI_301_PJT.exe: CMakeFiles/TI_301_PJT.dir/objects1.rsp
 TI_301_PJT.exe: CMakeFiles/TI_301_PJT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable TI_301_PJT.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable TI_301_PJT.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TI_301_PJT.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/TI_301_PJT.dir/clean:
 .PHONY : CMakeFiles/TI_301_PJT.dir/clean
 
 CMakeFiles/TI_301_PJT.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6 C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6 C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles\TI_301_PJT.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4 C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4 C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles\TI_301_PJT.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/TI_301_PJT.dir/depend
 

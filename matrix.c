@@ -109,3 +109,22 @@ double diffMatrix(t_matrix A, t_matrix B) {
     }
     return diff;
 }
+// etape 2
+t_matrix subMatrix(t_matrix matrix, t_partition part, int compo_index) {
+    t_class c = part.classes[compo_index];
+    int k = c.n;
+
+    t_matrix sub = createMatrix(k,k);
+
+    for (int i = 0; i < k; i++) {
+        int vi = c.sommets[i] - 1;
+
+        for (int j = 0; j < k; j++) {
+            int vj = c.sommets[j] - 1;
+
+            sub.data[i][j] = matrix.data[vi][vj];
+        }
+    }
+
+    return sub;
+}
