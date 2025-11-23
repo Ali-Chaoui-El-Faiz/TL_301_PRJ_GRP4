@@ -64,7 +64,7 @@ int main() {
 
 
     freeLinkArray(&liens);
-    free_partition(&p);
+//    free_partition(&p);
 
     printf("\n==============\n");
 
@@ -124,9 +124,51 @@ int main() {
         n++;
     }
 
-    printf("   >> Convergence atteinte a n = %d (diff = %.5f)\n", n, diff);
+    printf(">> Convergence atteinte a n = %d (diff = %.5f)\n", n, diff);
 
-    // Libération mémoire
+    printf("\n--- ETAPE 3 (Bonus) : Analyse par Classes (Sous-matrices) ---\n\n");
+
+    printf("Nombre total de classes a analyser : %d\n", p.n);
+
+    for (int c = 0; c < p.n; c++) {
+        printf("\n--- Classe %d/%d (%s) ---\n", c+1, p.n, p.classes[c].name);
+
+        // Sous-matrice pour cette classe
+        t_matrix S = subMatrix(M, p, c);
+        printf("Taille de la sous-matrice: %d x %d\n", S.rows, S.cols);
+
+        // Calcul de la période
+        int periode = getPeriod(S);
+        printf("Periode = %d\n", periode);
+
+        if (periode == 1) {
+            printf("Distribution stationnaire unique:\n| ");
+            t_matrix dist = stationaryDistribution(S);
+            for (int j = 0; j < dist.cols; j++) {
+                printf("%6.4f ", dist.data[0][j]);
+            }
+            printf("|\n");
+            freeMatrix(&dist);
+        } else {
+            printf("Distributions stationnaires cycliques (%d phases):\n", periode);
+            int num_dist;
+            t_matrix* distributions = periodicStationaryDistributions(S, periode, &num_dist);
+            for (int phase = 0; phase < num_dist; phase++) {
+                printf("Phase %d: | ", phase + 1);
+                for (int j = 0; j < distributions[phase].cols; j++) {
+                    printf("%6.4f ", distributions[phase].data[0][j]);
+                }
+                printf("|\n");
+                freeMatrix(&distributions[phase]);
+            }
+            free(distributions);
+        }
+
+        freeMatrix(&S);
+    }
+
+    free_partition(&p); // On libère la partition
+
     freeMatrix(&M);
     freeMatrix(&M2);
     freeMatrix(&M3);
