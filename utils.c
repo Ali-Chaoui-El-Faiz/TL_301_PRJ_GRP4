@@ -157,8 +157,7 @@ void exportToMermaid(t_list_adj *graphe, const char *filename) {
             char *source_id = getID(i + 1);
             char *dest_id = getID(c->arr);
 
-            printf("DEBUG: i=%d, c->arr=%d, source=%s, dest=%s\n",
-                   i, c->arr, source_id, dest_id);
+            printf("DEBUG: i=%d, c->arr=%d, source=%s, dest=%s\n", i, c->arr, source_id, dest_id);
 
             fprintf(f, "%s -->|%.2f|%s\n", source_id, c->prob, dest_id);
 
@@ -171,5 +170,5 @@ void exportToMermaid(t_list_adj *graphe, const char *filename) {
     }
 
     fclose(f);
-    printf("\n Fichier Mermaid exporté : %s\n", filename);
+    printf("\n Fichier Mermaid exporte : %s\n", filename);
 }

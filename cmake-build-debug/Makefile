@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2024.3.4_new\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2024.3.4_new\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6
+CMAKE_SOURCE_DIR = C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debu
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2024.3.4_new\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2024.3.4_new\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ TI_301_PJT/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/build
 .PHONY : TI_301_PJT/fast
 
+hasse.obj: hasse.c.obj
+.PHONY : hasse.obj
+
+# target to build an object file
+hasse.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/hasse.c.obj
+.PHONY : hasse.c.obj
+
+hasse.i: hasse.c.i
+.PHONY : hasse.i
+
+# target to preprocess a source file
+hasse.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/hasse.c.i
+.PHONY : hasse.c.i
+
+hasse.s: hasse.c.s
+.PHONY : hasse.s
+
+# target to generate assembly for a file
+hasse.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/hasse.c.s
+.PHONY : hasse.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -151,6 +175,30 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/main.c.s
 .PHONY : main.c.s
+
+matrix.obj: matrix.c.obj
+.PHONY : matrix.obj
+
+# target to build an object file
+matrix.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/matrix.c.obj
+.PHONY : matrix.c.obj
+
+matrix.i: matrix.c.i
+.PHONY : matrix.i
+
+# target to preprocess a source file
+matrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/matrix.c.i
+.PHONY : matrix.c.i
+
+matrix.s: matrix.c.s
+.PHONY : matrix.s
+
+# target to generate assembly for a file
+matrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/matrix.c.s
+.PHONY : matrix.c.s
 
 utils.obj: utils.c.obj
 .PHONY : utils.obj
@@ -176,6 +224,30 @@ utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/utils.c.s
 .PHONY : utils.c.s
 
+vertex.obj: vertex.c.obj
+.PHONY : vertex.obj
+
+# target to build an object file
+vertex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/vertex.c.obj
+.PHONY : vertex.c.obj
+
+vertex.i: vertex.c.i
+.PHONY : vertex.i
+
+# target to preprocess a source file
+vertex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/vertex.c.i
+.PHONY : vertex.c.i
+
+vertex.s: vertex.c.s
+.PHONY : vertex.s
+
+# target to generate assembly for a file
+vertex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/vertex.c.s
+.PHONY : vertex.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -185,12 +257,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... TI_301_PJT
+	@echo ... hasse.obj
+	@echo ... hasse.i
+	@echo ... hasse.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... matrix.obj
+	@echo ... matrix.i
+	@echo ... matrix.s
 	@echo ... utils.obj
 	@echo ... utils.i
 	@echo ... utils.s
+	@echo ... vertex.obj
+	@echo ... vertex.i
+	@echo ... vertex.s
 .PHONY : help
 
 
