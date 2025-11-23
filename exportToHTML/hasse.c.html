@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>hasse.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #b3ae60;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #bcbec4;}
+.s5 { color: #2aacb8;}
+.s6 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+hasse.c</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;malloc.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;stdio.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;stdlib.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&quot;hasse.h&quot;</span>
+
+
+<span class="s3">void </span><span class="s1">removeTransitiveLinks</span><span class="s4">(</span><span class="s1">t_link_array </span><span class="s4">*</span><span class="s1">p_link_array</span><span class="s4">)</span>
+<span class="s4">{</span>
+    <span class="s3">int </span><span class="s1">i </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+    <span class="s3">while </span><span class="s4">(</span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">)</span>
+    <span class="s4">{</span>
+        <span class="s1">t_link link1 </span><span class="s4">= </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">i</span><span class="s4">];</span>
+        <span class="s3">int </span><span class="s1">j </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+        <span class="s3">int </span><span class="s1">to_remove </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+        <span class="s3">while </span><span class="s4">(</span><span class="s1">j </span><span class="s4">&lt; </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">log_size </span><span class="s4">&amp;&amp; !</span><span class="s1">to_remove</span><span class="s4">)</span>
+        <span class="s4">{</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">j </span><span class="s4">!= </span><span class="s1">i</span><span class="s4">)</span>
+            <span class="s4">{</span>
+                <span class="s1">t_link link2 </span><span class="s4">= </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">j</span><span class="s4">];</span>
+                <span class="s3">if </span><span class="s4">(</span><span class="s1">link1</span><span class="s4">.</span><span class="s1">from </span><span class="s4">== </span><span class="s1">link2</span><span class="s4">.</span><span class="s1">from</span><span class="s4">)</span>
+                <span class="s4">{</span>
+                    <span class="s6">// look for a link from link2.to to link1.to</span>
+                    <span class="s3">int </span><span class="s1">k </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+                    <span class="s3">while </span><span class="s4">(</span><span class="s1">k </span><span class="s4">&lt; </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">log_size </span><span class="s4">&amp;&amp; !</span><span class="s1">to_remove</span><span class="s4">)</span>
+                    <span class="s4">{</span>
+                        <span class="s3">if </span><span class="s4">(</span><span class="s1">k </span><span class="s4">!= </span><span class="s1">j </span><span class="s4">&amp;&amp; </span><span class="s1">k </span><span class="s4">!= </span><span class="s1">i</span><span class="s4">)</span>
+                        <span class="s4">{</span>
+                            <span class="s1">t_link link3 </span><span class="s4">= </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">k</span><span class="s4">];</span>
+                            <span class="s3">if </span><span class="s4">((</span><span class="s1">link3</span><span class="s4">.</span><span class="s1">from </span><span class="s4">== </span><span class="s1">link2</span><span class="s4">.</span><span class="s1">to</span><span class="s4">) &amp;&amp; (</span><span class="s1">link3</span><span class="s4">.</span><span class="s1">to </span><span class="s4">== </span><span class="s1">link1</span><span class="s4">.</span><span class="s1">to</span><span class="s4">))</span>
+                            <span class="s4">{</span>
+                                <span class="s1">to_remove </span><span class="s4">= </span><span class="s5">1</span><span class="s4">;</span>
+                            <span class="s4">}</span>
+                        <span class="s4">}</span>
+                        <span class="s1">k</span><span class="s4">++;</span>
+                    <span class="s4">}</span>
+                <span class="s4">}</span>
+            <span class="s4">}</span>
+            <span class="s1">j</span><span class="s4">++;</span>
+        <span class="s4">}</span>
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">to_remove</span><span class="s4">)</span>
+        <span class="s4">{</span>
+            <span class="s6">// remove link1 by replacing it with the last link</span>
+            <span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">i</span><span class="s4">] = </span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">log_size </span><span class="s4">- </span><span class="s5">1</span><span class="s4">];</span>
+            <span class="s1">p_link_array</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">--;</span>
+        <span class="s4">}</span>
+        <span class="s3">else</span>
+        <span class="s4">{</span>
+            <span class="s1">i</span><span class="s4">++;</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+<span class="s4">}</span>
+<span class="s6">// Partie 2 étape 2</span>
+<span class="s6">// Utilitaire : Ajoute un lien s'il n'existe pas déjà</span>
+<span class="s3">void </span><span class="s1">add_unique_link</span><span class="s4">(</span><span class="s1">t_link_array </span><span class="s4">*</span><span class="s1">arr</span><span class="s4">, </span><span class="s3">int </span><span class="s1">from</span><span class="s4">, </span><span class="s3">int </span><span class="s1">to</span><span class="s4">) {</span>
+    <span class="s6">// Vérifie si le lien existe déjà</span>
+    <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">i </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) {</span>
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">from </span><span class="s4">== </span><span class="s1">from </span><span class="s4">&amp;&amp; </span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">to </span><span class="s4">== </span><span class="s1">to</span><span class="s4">) {</span>
+            <span class="s3">return</span><span class="s4">;</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+
+    <span class="s6">// Redimensionne si nécessaire</span>
+    <span class="s3">if </span><span class="s4">(</span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">log_size </span><span class="s4">&gt;= </span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">phy_size</span><span class="s4">) {</span>
+        <span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">phy_size </span><span class="s4">*= </span><span class="s5">2</span><span class="s4">;</span>
+        <span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">links </span><span class="s4">= </span><span class="s1">realloc</span><span class="s4">(</span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">, </span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">phy_size </span><span class="s4">* </span><span class="s3">sizeof</span><span class="s4">(</span><span class="s1">t_link</span><span class="s4">));</span>
+    <span class="s4">}</span>
+
+    <span class="s6">// Ajoute le lien</span>
+    <span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">].</span><span class="s1">from </span><span class="s4">= </span><span class="s1">from</span><span class="s4">;</span>
+    <span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">].</span><span class="s1">to </span><span class="s4">= </span><span class="s1">to</span><span class="s4">;</span>
+    <span class="s1">arr</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">++;</span>
+<span class="s4">}</span>
+
+<span class="s6">// Etape 2 : Création des liens</span>
+<span class="s1">t_link_array createLinkArray</span><span class="s4">(</span><span class="s1">t_partition </span><span class="s4">*</span><span class="s1">p</span><span class="s4">, </span><span class="s1">t_list_adj </span><span class="s4">*</span><span class="s1">graph</span><span class="s4">) {</span>
+    <span class="s1">t_link_array res</span><span class="s4">;</span>
+    <span class="s1">res</span><span class="s4">.</span><span class="s1">phy_size </span><span class="s4">= </span><span class="s5">10</span><span class="s4">; </span><span class="s6">// Taille initiale arbitraire</span>
+    <span class="s1">res</span><span class="s4">.</span><span class="s1">log_size </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+    <span class="s1">res</span><span class="s4">.</span><span class="s1">links </span><span class="s4">= </span><span class="s1">malloc</span><span class="s4">(</span><span class="s1">res</span><span class="s4">.</span><span class="s1">phy_size </span><span class="s4">* </span><span class="s3">sizeof</span><span class="s4">(</span><span class="s1">t_link</span><span class="s4">));</span>
+
+    <span class="s6">// 1. Tableau pour savoir &quot;sommet X est dans quelle classe ?&quot;</span>
+    <span class="s6">// indice du tableau = (numéro sommet - 1), valeur = indice classe</span>
+    <span class="s3">int </span><span class="s4">*</span><span class="s1">vertex_class_map </span><span class="s4">= </span><span class="s1">malloc</span><span class="s4">(</span><span class="s1">graph</span><span class="s4">-&gt;</span><span class="s1">n </span><span class="s4">* </span><span class="s3">sizeof</span><span class="s4">(</span><span class="s3">int</span><span class="s4">));</span>
+
+    <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">i </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">n</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) { </span><span class="s6">// Pour chaque classe</span>
+        <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">j </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">j </span><span class="s4">&lt; </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">n</span><span class="s4">; </span><span class="s1">j</span><span class="s4">++) { </span><span class="s6">// Pour chaque sommet</span>
+            <span class="s3">int </span><span class="s1">val_sommet </span><span class="s4">= </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">sommets</span><span class="s4">[</span><span class="s1">j</span><span class="s4">];</span>
+            <span class="s1">vertex_class_map</span><span class="s4">[</span><span class="s1">val_sommet </span><span class="s4">- </span><span class="s5">1</span><span class="s4">] = </span><span class="s1">i</span><span class="s4">;</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+
+    <span class="s6">// Parcours de tous les arcs du graphe</span>
+    <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">u </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">u </span><span class="s4">&lt; </span><span class="s1">graph</span><span class="s4">-&gt;</span><span class="s1">n</span><span class="s4">; </span><span class="s1">u</span><span class="s4">++) {</span>
+        <span class="s1">t_cell </span><span class="s4">*</span><span class="s1">curr </span><span class="s4">= </span><span class="s1">graph</span><span class="s4">-&gt;</span><span class="s1">tab</span><span class="s4">[</span><span class="s1">u</span><span class="s4">].</span><span class="s1">head</span><span class="s4">;</span>
+        <span class="s3">while </span><span class="s4">(</span><span class="s1">curr </span><span class="s4">!= </span><span class="s1">NULL</span><span class="s4">) {</span>
+            <span class="s3">int </span><span class="s1">v </span><span class="s4">= </span><span class="s1">curr</span><span class="s4">-&gt;</span><span class="s1">arr </span><span class="s4">- </span><span class="s5">1</span><span class="s4">; </span><span class="s6">// Sommet destination</span>
+
+            <span class="s3">int </span><span class="s1">class_u </span><span class="s4">= </span><span class="s1">vertex_class_map</span><span class="s4">[</span><span class="s1">u</span><span class="s4">];</span>
+            <span class="s3">int </span><span class="s1">class_v </span><span class="s4">= </span><span class="s1">vertex_class_map</span><span class="s4">[</span><span class="s1">v</span><span class="s4">];</span>
+
+            <span class="s6">// Si l'arc va vers une autre classe, c'est un lien Hasse</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">class_u </span><span class="s4">!= </span><span class="s1">class_v</span><span class="s4">) {</span>
+                <span class="s1">add_unique_link</span><span class="s4">(&amp;</span><span class="s1">res</span><span class="s4">, </span><span class="s1">class_u</span><span class="s4">, </span><span class="s1">class_v</span><span class="s4">);</span>
+            <span class="s4">}</span>
+            <span class="s1">curr </span><span class="s4">= </span><span class="s1">curr</span><span class="s4">-&gt;</span><span class="s1">next</span><span class="s4">;</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+
+    <span class="s1">free</span><span class="s4">(</span><span class="s1">vertex_class_map</span><span class="s4">);</span>
+    <span class="s3">return </span><span class="s1">res</span><span class="s4">;</span>
+<span class="s4">}</span>
+
+<span class="s6">// Etape 2 (Validation) : Export Mermaid</span>
+<span class="s3">void </span><span class="s1">exportHasseMermaid</span><span class="s4">(</span><span class="s1">t_partition </span><span class="s4">*</span><span class="s1">p</span><span class="s4">, </span><span class="s1">t_link_array </span><span class="s4">*</span><span class="s1">links</span><span class="s4">, </span><span class="s3">const char </span><span class="s4">*</span><span class="s1">filename</span><span class="s4">) {</span>
+    <span class="s1">FILE </span><span class="s4">*</span><span class="s1">f </span><span class="s4">= </span><span class="s1">fopen</span><span class="s4">(</span><span class="s1">filename</span><span class="s4">, </span><span class="s2">&quot;wt&quot;</span><span class="s4">);</span>
+    <span class="s3">if </span><span class="s4">(!</span><span class="s1">f</span><span class="s4">) </span><span class="s3">return</span><span class="s4">;</span>
+
+    <span class="s1">fprintf</span><span class="s4">(</span><span class="s1">f</span><span class="s4">, </span><span class="s2">&quot;graph TD</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+
+    <span class="s6">// Dessiner les classes (noeuds)</span>
+    <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">i </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">n</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) {</span>
+        <span class="s1">fprintf</span><span class="s4">(</span><span class="s1">f</span><span class="s4">, </span><span class="s2">&quot;    C%d[</span><span class="s3">\&quot;</span><span class="s2">{&quot;</span><span class="s4">, </span><span class="s1">i</span><span class="s4">);</span>
+        <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">j </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">j </span><span class="s4">&lt; </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">n</span><span class="s4">; </span><span class="s1">j</span><span class="s4">++) {</span>
+            <span class="s1">fprintf</span><span class="s4">(</span><span class="s1">f</span><span class="s4">, </span><span class="s2">&quot;%d&quot;</span><span class="s4">, </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">sommets</span><span class="s4">[</span><span class="s1">j</span><span class="s4">]);</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">j </span><span class="s4">&lt; </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">n </span><span class="s4">- </span><span class="s5">1</span><span class="s4">) </span><span class="s1">fprintf</span><span class="s4">(</span><span class="s1">f</span><span class="s4">, </span><span class="s2">&quot;,&quot;</span><span class="s4">);</span>
+        <span class="s4">}</span>
+        <span class="s1">fprintf</span><span class="s4">(</span><span class="s1">f</span><span class="s4">, </span><span class="s2">&quot;}</span><span class="s3">\&quot;</span><span class="s2">]</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+    <span class="s4">}</span>
+
+    <span class="s6">// Dessiner les liens</span>
+    <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">i </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">links</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) {</span>
+        <span class="s6">// C_depart --&gt; C_arrivee</span>
+        <span class="s1">fprintf</span><span class="s4">(</span><span class="s1">f</span><span class="s4">, </span><span class="s2">&quot;    C%d --&gt; C%d</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">, </span><span class="s1">links</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">from</span><span class="s4">, </span><span class="s1">links</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">to</span><span class="s4">);</span>
+    <span class="s4">}</span>
+
+    <span class="s1">fclose</span><span class="s4">(</span><span class="s1">f</span><span class="s4">);</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Fichier Hasse genere : %s</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">, </span><span class="s1">filename</span><span class="s4">);</span>
+<span class="s4">}</span>
+
+<span class="s6">// Etape 3 : Propriétés</span>
+<span class="s3">void </span><span class="s1">printGraphProperties</span><span class="s4">(</span><span class="s1">t_partition </span><span class="s4">*</span><span class="s1">p</span><span class="s4">, </span><span class="s1">t_link_array </span><span class="s4">*</span><span class="s1">links</span><span class="s4">) {</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">--- CARACTERISTIQUES DU GRAPHE ---</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+
+    <span class="s6">// 1. Irréductible ?</span>
+    <span class="s3">if </span><span class="s4">(</span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">n </span><span class="s4">== </span><span class="s5">1</span><span class="s4">) </span><span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;[x] Le graphe est IRREDUCTIBLE.</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+    <span class="s3">else </span><span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;[ ] Le graphe n'est PAS irreductible (%d classes).</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">, </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">n</span><span class="s4">);</span>
+
+    <span class="s6">// 2. Analyse des classes</span>
+    <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">i </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">n</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) {</span>
+        <span class="s3">int </span><span class="s1">est_transitoire </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+
+        <span class="s6">// Vérifie si la classe 'i' a des liens sortants</span>
+        <span class="s3">for </span><span class="s4">(</span><span class="s3">int </span><span class="s1">k </span><span class="s4">= </span><span class="s5">0</span><span class="s4">; </span><span class="s1">k </span><span class="s4">&lt; </span><span class="s1">links</span><span class="s4">-&gt;</span><span class="s1">log_size</span><span class="s4">; </span><span class="s1">k</span><span class="s4">++) {</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">links</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">[</span><span class="s1">k</span><span class="s4">].</span><span class="s1">from </span><span class="s4">== </span><span class="s1">i</span><span class="s4">) {</span>
+                <span class="s1">est_transitoire </span><span class="s4">= </span><span class="s5">1</span><span class="s4">;</span>
+                <span class="s3">break</span><span class="s4">;</span>
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+
+        <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Classe %s : &quot;</span><span class="s4">, </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">name</span><span class="s4">);</span>
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">est_transitoire</span><span class="s4">) {</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;TRANSITOIRE</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+        <span class="s4">} </span><span class="s3">else </span><span class="s4">{</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;PERSISTANTE&quot;</span><span class="s4">);</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">n </span><span class="s4">== </span><span class="s5">1</span><span class="s4">) {</span>
+                <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot; -&gt; Etat ABSORBANT (%d)</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">, </span><span class="s1">p</span><span class="s4">-&gt;</span><span class="s1">classes</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">sommets</span><span class="s4">[</span><span class="s5">0</span><span class="s4">]);</span>
+            <span class="s4">} </span><span class="s3">else </span><span class="s4">{</span>
+                <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;----------------------------------</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+<span class="s4">}</span>
+
+<span class="s3">void </span><span class="s1">freeLinkArray</span><span class="s4">(</span><span class="s1">t_link_array </span><span class="s4">*</span><span class="s1">l</span><span class="s4">) {</span>
+    <span class="s1">free</span><span class="s4">(</span><span class="s1">l</span><span class="s4">-&gt;</span><span class="s1">links</span><span class="s4">);</span>
+    <span class="s1">l</span><span class="s4">-&gt;</span><span class="s1">log_size </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+    <span class="s1">l</span><span class="s4">-&gt;</span><span class="s1">phy_size </span><span class="s4">= </span><span class="s5">0</span><span class="s4">;</span>
+<span class="s4">}</span></pre>
+</body>
+</html>
