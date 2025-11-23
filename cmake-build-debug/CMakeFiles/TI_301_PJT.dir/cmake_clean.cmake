@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TI_301_PJT.dir/hasse.c.obj.d"
   "CMakeFiles/TI_301_PJT.dir/main.c.obj"
   "CMakeFiles/TI_301_PJT.dir/main.c.obj.d"
+  "CMakeFiles/TI_301_PJT.dir/matrix.c.obj"
+  "CMakeFiles/TI_301_PJT.dir/matrix.c.obj.d"
   "CMakeFiles/TI_301_PJT.dir/utils.c.obj"
   "CMakeFiles/TI_301_PJT.dir/utils.c.obj.d"
   "CMakeFiles/TI_301_PJT.dir/vertex.c.obj"

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/hasse.c" "CMakeFiles/TI_301_PJT.dir/hasse.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/hasse.c.obj.d"
   "C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/main.c" "CMakeFiles/TI_301_PJT.dir/main.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/main.c.obj.d"
+  "C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/matrix.c" "CMakeFiles/TI_301_PJT.dir/matrix.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/matrix.c.obj.d"
   "C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/utils.c" "CMakeFiles/TI_301_PJT.dir/utils.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/utils.c.obj.d"
   "C:/Users/alich/CLionProjects/TL_301_PRJ_GRP6/vertex.c" "CMakeFiles/TI_301_PJT.dir/vertex.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/vertex.c.obj.d"
   )

@@ -176,6 +176,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/main.c.s
 .PHONY : main.c.s
 
+matrix.obj: matrix.c.obj
+.PHONY : matrix.obj
+
+# target to build an object file
+matrix.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/matrix.c.obj
+.PHONY : matrix.c.obj
+
+matrix.i: matrix.c.i
+.PHONY : matrix.i
+
+# target to preprocess a source file
+matrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/matrix.c.i
+.PHONY : matrix.c.i
+
+matrix.s: matrix.c.s
+.PHONY : matrix.s
+
+# target to generate assembly for a file
+matrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TI_301_PJT.dir\build.make CMakeFiles/TI_301_PJT.dir/matrix.c.s
+.PHONY : matrix.c.s
+
 utils.obj: utils.c.obj
 .PHONY : utils.obj
 
@@ -239,6 +263,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... matrix.obj
+	@echo ... matrix.i
+	@echo ... matrix.s
 	@echo ... utils.obj
 	@echo ... utils.i
 	@echo ... utils.s

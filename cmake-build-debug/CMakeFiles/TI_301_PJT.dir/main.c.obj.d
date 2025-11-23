@@ -22,5 +22,4 @@ CMakeFiles/TI_301_PJT.dir/main.c.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.3.4/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\utils.h \
- C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\vertex.h \
- C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\hasse.h
+ C:\Users\alich\CLionProjects\TL_301_PRJ_GRP6\matrix.h
