@@ -1,15 +1,78 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utils.h"
+#include "vertex.h"
 #include "matrix.h"
+#include "hasse.h"
 
 int main() {
-    printf("VALIDATION ETAPE 1\n\n");
+
+    char filename[100];
+
+    printf("=== PROJET GRAPHES DE MARKOV ===\n\n");
+
+    printf("Entrez le nom du fichier (ex: exemple_meteo.txt) : ");
+    scanf("%s", filename);
+
+
+    printf("PART - 1\n\n");
+    // ETAPE 1 : Chargement du graphe
+
+    printf("--- Chargement du graphe depuis '%s' ---\n", filename);
+    t_list_adj graphe = readGraph(filename);
+    displaylistadj(graphe);
+
+    // Vérification si c'est bien un graphe de Markov (Partie 1)
+    verifierGrapheMarkov(&graphe);
+
+    // Export du graphe initial (Partie 1)
+    exportToMermaid(&graphe, "graphe_initial.mmd");
+    printf("\n==============\n");
+
+
+    printf("PART - 2\n\n");
+
+    // ETAPE 2 : Algorithme de Tarjan (Création des classes)
+
+    printf("\n--- Algorithme de Tarjan (Recherche des classes) ---\n");
+
+    t_partition p;
+    // Appel de la fonction Tarjan (qui remplit la partition 'p')
+    tarjan(&graphe, &p);
+
+    // Affichage des classes trouvées
+    afficher_partition(&p);
+
+
+    // ETAPE 3 : Diagramme de Hasse et Propriétés
+
+    printf("\n--- Construction du Diagramme de Hasse ---\n");
+
+    // 1. Création des liens entre les classes
+    t_link_array liens = createLinkArray(&p, &graphe);
+    printf("Nombre de liens trouves (brut) : %d\n", liens.log_size);
+
+    // 2. Suppression des liens transitifs
+    removeTransitiveLinks(&liens);
+    printf("Nombre de liens apres simplification : %d\n", liens.log_size);
+
+    // 3. Export en Mermaid pour visualiser les classes
+    exportHasseMermaid(&p, &liens, "diagramme_hasse.mmd");
+
+    // 4. Affichage des propriétés (Transitoire, Persistante, Absorbant, Irréductible)
+    printGraphProperties(&p, &liens);
+
+
+    freeLinkArray(&liens);
+    free_partition(&p);
+
+    printf("\n==============\n");
+
+    printf("PART - 3\n\n");
 
     // 1. Chargement du graphe et création de la matrice M
     //nAffichage de la matrice M associée à l'exemple météo
-    t_list_adj graph = readGraph("exemple_meteo.txt");
-    t_matrix M = graphToMatrix(&graph);
+    t_matrix M = graphToMatrix(&graphe);
 
     printf("1 - Matrice Initiale M :\n");
     printMatrix(M);
