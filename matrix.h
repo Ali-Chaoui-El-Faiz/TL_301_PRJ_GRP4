@@ -2,6 +2,7 @@
 #define MATRIX_H
 
 #include "utils.h" // pour t_list_adj
+#include "vertex.h" // pour etape 2
 
 // Structure de la matrice / Etape 1
 typedef struct {
@@ -28,5 +29,6 @@ t_matrix multiplyMatrices(t_matrix A, t_matrix B);
 
 // Calcule la différence (somme des valeurs absolues)
 double diffMatrix(t_matrix A, t_matrix B);
-
+// etape 2
+t_matrix subMatrix(t_matrix matrix, t_partition part, int compo_index);
 #endif
