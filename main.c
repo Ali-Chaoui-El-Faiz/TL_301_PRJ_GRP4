@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "utils.h"
 #include "matrix.h"
-
+#include "vertex.h"
 int main() {
     printf("VALIDATION ETAPE 1\n\n");
 
@@ -63,6 +63,50 @@ int main() {
 
     printf("   >> Convergence atteinte a n = %d (diff = %.5f)\n", n, diff);
 
+
+   ;
+    printf("\nVALIDATION ETAPE 3\n");
+
+    t_partition part;
+    tarjan(&graph, &part);
+
+    for (int c = 0; c < part.n; c++) {
+        printf("\n--- Classe %d (%s) ---\n", c + 1, part.classes[c].name);
+
+        // Sous-matrice de la classe
+        t_matrix S = subMatrix(M, part, c);
+
+        printf("Taille: %d x %d\n", S.rows, S.cols);
+
+        // Calcul de la période
+        int periode = getPeriod(S);
+        printf("Periode = %d\n", periode);
+
+        // ⭐⭐ SOLUTION SIMPLIFIÉE : Calcul DIRECT sans periodicStationaryDistributions ⭐⭐
+        if (periode == 1) {
+            printf("Distribution stationnaire unique:\n");
+            printf("| ");
+
+            // Calcul direct sans fonctions intermédiaires
+            t_matrix dist = stationaryDistribution(S);
+
+            // Affichage IMMÉDIAT
+            for (int j = 0; j < dist.cols; j++) {
+                printf("%6.4f ", dist.data[0][j]);
+            }
+            printf("|\n");
+
+            // Libération immédiate
+            freeMatrix(&dist);
+        } else {
+            printf("Distributions stationnaires cycliques (%d phases):\n", periode);
+            // ... (gérer le cas périodique si besoin)
+        }
+
+        freeMatrix(&S);
+    }
+
+    free_partition(&part);
     // Libération mémoire
     freeMatrix(&M);
     freeMatrix(&M2);

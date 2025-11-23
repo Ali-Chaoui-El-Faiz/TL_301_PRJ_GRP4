@@ -128,3 +128,158 @@ t_matrix subMatrix(t_matrix matrix, t_partition part, int compo_index) {
 
     return sub;
 }
+
+//   ETAPE 3 E
+// PGCD
+int gcd(int *vals, int nbvals) {
+    if (nbvals == 0) return 0;
+
+    int result = vals[0];
+
+    for (int i = 1; i < nbvals; i++) {
+        int a = result;
+        int b = vals[i];
+
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        result = a;
+    }
+
+    return result;
+}
+
+// Calcule periode
+int getPeriod(t_matrix sub_matrix) {
+    int n = sub_matrix.rows;
+
+    int *periods = malloc(n * sizeof(int));
+    int period_count = 0;
+
+    t_matrix power = createMatrix(n, n);
+    t_matrix next = createMatrix(n, n);
+    copyMatrix(&power, sub_matrix);
+
+    for (int k = 1; k <= n; k++) {
+        int diag_nonzero = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (power.data[i][i] > 0.0) {
+                diag_nonzero = 1;
+                break;
+            }
+        }
+
+        if (diag_nonzero) {
+            periods[period_count] = k;
+            period_count++;
+        }
+
+        t_matrix tmp = multiplyMatrices(power, sub_matrix);
+        copyMatrix(&next, tmp);
+        freeMatrix(&tmp);
+        copyMatrix(&power, next);
+    }
+
+    int result = gcd(periods, period_count);
+
+    free(periods);
+    freeMatrix(&power);
+    freeMatrix(&next);
+
+    return result;
+}
+
+t_matrix stationaryDistribution(t_matrix mat) {
+    int n = mat.rows;
+
+    // Distribution uniforme initiale
+    t_matrix dist = createMatrix(1, n);
+    double init_val = 1.0 / n;
+    for (int j = 0; j < n; j++) {
+        dist.data[0][j] = init_val;
+    }
+
+    double epsilon = 1e-8;
+    double diff;
+    int max_iter = 1000;
+
+    for (int iter = 0; iter < max_iter; iter++) {
+        t_matrix dist_next = createMatrix(1, n);
+
+        for (int j = 0; j < n; j++) {
+            double sum = 0.0;
+            for (int i = 0; i < n; i++) {
+                sum += dist.data[0][i] * mat.data[i][j];
+            }
+            dist_next.data[0][j] = sum;
+        }
+
+        diff = 0.0;
+        for (int j = 0; j < n; j++) {
+            diff += fabs(dist_next.data[0][j] - dist.data[0][j]);
+        }
+
+        // Copie manuelle des donnees
+        for (int j = 0; j < n; j++) {
+            dist.data[0][j] = dist_next.data[0][j];
+        }
+
+        freeMatrix(&dist_next);
+
+        if (diff < epsilon) {
+            break;
+        }
+    }
+
+    return dist;
+}
+
+t_matrix* periodicStationaryDistributions(t_matrix sub_matrix, int period, int* num_distributions) {
+    *num_distributions = period;
+    t_matrix* distributions = malloc(period * sizeof(t_matrix));
+
+    if (period == 1) {
+        // Cas apériodique
+        t_matrix dist = stationaryDistribution(sub_matrix);
+        distributions[0] = createMatrix(1, sub_matrix.cols);
+        for (int j = 0; j < sub_matrix.cols; j++) {
+            distributions[0].data[0][j] = dist.data[0][j];
+        }
+        freeMatrix(&dist);
+        return distributions;
+    }
+
+    // Cas periodique
+    t_matrix M_period = createMatrix(sub_matrix.rows, sub_matrix.cols);
+    copyMatrix(&M_period, sub_matrix);
+
+    for (int i = 1; i < period; i++) {
+        t_matrix temp = multiplyMatrices(M_period, sub_matrix);
+        copyMatrix(&M_period, temp);
+        freeMatrix(&temp);
+    }
+
+    t_matrix base_dist = stationaryDistribution(M_period);
+    distributions[0] = createMatrix(1, sub_matrix.cols);
+    for (int j = 0; j < sub_matrix.cols; j++) {
+        distributions[0].data[0][j] = base_dist.data[0][j];
+    }
+    freeMatrix(&base_dist);
+
+    for (int phase = 1; phase < period; phase++) {
+        distributions[phase] = createMatrix(1, sub_matrix.cols);
+        for (int j = 0; j < sub_matrix.cols; j++) {
+            double sum = 0.0;
+            for (int i = 0; i < sub_matrix.rows; i++) {
+                sum += distributions[phase-1].data[0][i] * sub_matrix.data[i][j];
+            }
+            distributions[phase].data[0][j] = sum;
+        }
+    }
+
+    freeMatrix(&M_period);
+    return distributions;
+}

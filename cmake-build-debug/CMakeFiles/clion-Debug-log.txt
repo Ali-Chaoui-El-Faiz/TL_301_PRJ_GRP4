@@ -1,10 +1,10 @@
-"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4 -B C:\Users\wacim\CLionProjects\TL_301_PRJ_GRP4\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2024.3.4_new\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6 -B C:\Users\samy4\CLionProjects\TL_301_PRJ_GRP6\cmake-build-debug
 -- The C compiler identification is GNU 13.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.3.4/bin/mingw/bin/gcc.exe - skipped
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.3.4_new/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (2.6s)
+-- Configuring done (4.1s)
 -- Generating done (0.0s)
--- Build files have been written to: C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/cmake-build-debug
+-- Build files have been written to: C:/Users/samy4/CLionProjects/TL_301_PRJ_GRP6/cmake-build-debug

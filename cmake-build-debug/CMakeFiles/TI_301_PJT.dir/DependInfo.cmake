@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/hasse.c" "CMakeFiles/TI_301_PJT.dir/hasse.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/hasse.c.obj.d"
-  "C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/main.c" "CMakeFiles/TI_301_PJT.dir/main.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/main.c.obj.d"
-  "C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/matrix.c" "CMakeFiles/TI_301_PJT.dir/matrix.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/matrix.c.obj.d"
-  "C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/utils.c" "CMakeFiles/TI_301_PJT.dir/utils.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/utils.c.obj.d"
-  "C:/Users/wacim/CLionProjects/TL_301_PRJ_GRP4/vertex.c" "CMakeFiles/TI_301_PJT.dir/vertex.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/vertex.c.obj.d"
+  "C:/Users/samy4/CLionProjects/TL_301_PRJ_GRP6/hasse.c" "CMakeFiles/TI_301_PJT.dir/hasse.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/hasse.c.obj.d"
+  "C:/Users/samy4/CLionProjects/TL_301_PRJ_GRP6/main.c" "CMakeFiles/TI_301_PJT.dir/main.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/main.c.obj.d"
+  "C:/Users/samy4/CLionProjects/TL_301_PRJ_GRP6/matrix.c" "CMakeFiles/TI_301_PJT.dir/matrix.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/matrix.c.obj.d"
+  "C:/Users/samy4/CLionProjects/TL_301_PRJ_GRP6/utils.c" "CMakeFiles/TI_301_PJT.dir/utils.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/utils.c.obj.d"
+  "C:/Users/samy4/CLionProjects/TL_301_PRJ_GRP6/vertex.c" "CMakeFiles/TI_301_PJT.dir/vertex.c.obj" "gcc" "CMakeFiles/TI_301_PJT.dir/vertex.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

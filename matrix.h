@@ -32,3 +32,9 @@ double diffMatrix(t_matrix A, t_matrix B);
 // etape 2
 t_matrix subMatrix(t_matrix matrix, t_partition part, int compo_index);
 #endif
+// etape 3
+int gcd(int *vals, int nbvals);
+int getPeriod(t_matrix sub_matrix);
+t_matrix stationaryDistribution(t_matrix mat);
+t_matrix* periodicStationaryDistributions(t_matrix sub_matrix, int period, int* num_distributions);
+int getPeriod(t_matrix sub_matrix);
